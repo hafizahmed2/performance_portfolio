@@ -1,0 +1,17 @@
+<h1 class="title">
+  <%= @performance.title%>
+
+  <%= link_to edit_performance_path(@performance), class: 'clear-link ml2' do %>
+    <%= image_tag 'edit.svg' %>
+  <% end %>
+
+  <%= link_to @performance, method: :delete, data: { confirm: 'Are you sure?' }, class: 'clear-link ml2' do %>
+    <%= image_tag 'delete.svg' %>
+  <% end %>
+</h1>
+
+<p class="date"><%= formatted_date(@performance.updated_at) %></p>
+
+<video class="video-player" controls>
+  <source src=<%= rails_blob_path(@performance.video) %> type="video/webm"/>
+</video>

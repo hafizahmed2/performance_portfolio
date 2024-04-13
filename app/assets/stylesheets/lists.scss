@@ -1,0 +1,16 @@
+.list {
+  display: grid;
+  align-items: center;
+  gap: $vertical-gap;
+  grid-template-columns: 1fr;
+  margin-bottom: $vertical-gap;
+
+  .item {
+    display: flex;
+    gap: $default-spacing;
+    padding: $default-spacing;
+    background-color: $white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+}

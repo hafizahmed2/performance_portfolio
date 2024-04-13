@@ -1,0 +1,16 @@
+$mobile-breakpoint: 560px;
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1080px;
+  padding: 16px;
+  margin: auto;
+}
+
+.d-flex {
+  display: flex;
+}

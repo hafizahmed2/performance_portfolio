@@ -1,0 +1,41 @@
+<h1>
+  Your Performances 
+  <%= link_to new_performance_path, class: 'clear-link ml2' do %>
+    <%= image_tag 'plus.svg', class: 'd-flex' %>
+  <% end %>
+</h1>
+
+<div class="list">
+  <% @performances.each do |performance| %>
+    <div class="item performance" id="performance-<%=performance.id%>">
+      <div class="performance-thumbnail">
+        <%- thumbnail = performance&.video&.preview(resize_to_limit: [150, 84.38])&.processed %>
+        <%= image_tag url_for(thumbnail) if thumbnail %>        
+      </div>
+
+      <div class="performance-details">
+        <h2>
+          <%= performance.title %>
+        </h2>
+
+        <p>
+          <%= formatted_date(performance.created_at) %>
+        </p>
+      </div>
+      
+      <div class="performance-actions">
+        <%= link_to performance_path(performance), class: 'clear-link' do %>
+          <%= image_tag 'play.svg' %>
+        <% end %>
+
+        <%= link_to edit_performance_path(performance), class: 'clear-link' do %>
+          <%= image_tag 'edit.svg' %>
+        <% end %>
+
+        <%= link_to performance, method: :delete, remote: true, data: { confirm: 'Are you sure?' }, class: 'clear-link' do %>
+          <%= image_tag 'delete.svg' %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

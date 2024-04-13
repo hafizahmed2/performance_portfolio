@@ -1,0 +1,30 @@
+body {
+  font-family: sans-serif;
+}
+
+@mixin heading {
+  font-family: sans-serif;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  color: $black-200;
+  margin: 0 0 $vertical-gap 0;
+  letter-spacing: 0.3px;
+}
+
+h1 {
+  @include heading;
+  font-size: 24px;
+}
+
+h2 {
+  @include heading;
+  font-size: 20px;
+}
+
+p {
+  @include heading;
+  font-size: 14px;
+  font-weight: 400;
+}

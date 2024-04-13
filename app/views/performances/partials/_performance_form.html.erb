@@ -1,0 +1,14 @@
+<%= form_with(model: @performance, url: performances_path, local: true, html: { id: 'performance_form', data: { id: @performance.id } }) do |form| %>
+  <%= form.text_field :title, id: 'performance_title', class: 'form-control', required: true, placeholder: 'Enter performance name' %>
+
+  <div class="video-container">
+    <video id="video_preview" autoplay muted></video>
+  </div>
+
+  <div class="buttons-group">
+    <%= button_tag 'Record Video Selfie', type: 'button', id: 'record_button', class: 'btn btn-primary recording-button', disabled: false %>
+    <%= button_tag 'Record Screen', type: 'button', id: 'record_screen_button', class: 'btn btn-primary recording-button', disabled: false %>
+    <%= button_tag 'Stop', type: 'button', id: 'stop_button', class: 'btn btn-primary', disabled: false %>
+    <%= form.submit 'Save', id: 'save_button', class: 'btn btn-success' %>
+  </div>
+<% end %>
